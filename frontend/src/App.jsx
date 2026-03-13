@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { KnowledgePanel } from './components/KnowledgePanel';
+import { ProfileHeader } from './components/ProfileHeader';
 import { SearchResult } from './components/SearchResult';
 import { fetchProjects } from './services/api';
 import { useTranslation } from './hooks/useTranslation';
@@ -29,6 +30,8 @@ function HomePage() {
   return (
     <div className="flex gap-6">
       <div className="flex-1">
+        <ProfileHeader />
+        
         <div className="flex items-center gap-2 mb-4">
           <span className="text-google-text-secondary text-sm">
             {searching ? t('home.searching') : t('home.resultsCount', { count: projects.length })}
@@ -86,6 +89,8 @@ function ProjectsPage() {
   return (
     <div className="flex gap-6">
       <div className="flex-1">
+        <ProfileHeader />
+        
         <h2 className="text-xl text-google-text mb-4">{t('projects.title')}</h2>
         
         {loading ? (
@@ -114,6 +119,8 @@ function ExperiencePage() {
   return (
     <div className="flex gap-6">
       <div className="flex-1">
+        <ProfileHeader />
+        
         <h2 className="text-xl text-google-text mb-4">{t('experience.title')}</h2>
         
         <div className="space-y-4">
@@ -150,6 +157,8 @@ function ContactPage() {
   return (
     <div className="flex gap-6">
       <div className="flex-1">
+        <ProfileHeader />
+        
         <h2 className="text-xl text-google-text mb-4">{t('contact.title')}</h2>
         
         <div className="bg-google-surface rounded-lg p-6">
