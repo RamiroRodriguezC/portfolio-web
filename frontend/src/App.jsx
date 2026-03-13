@@ -3,28 +3,19 @@ import { Layout } from './components/Layout';
 import { KnowledgePanel } from './components/KnowledgePanel';
 import { ProfileHeader } from './components/ProfileHeader';
 import { SearchResult } from './components/SearchResult';
-import { fetchProjects } from './services/api';
+import projects from './data/projects';
 import { useTranslation } from './hooks/useTranslation';
 
 function HomePage() {
-  const [projects, setProjects] = useState([]);
+  const [projectsList, setProjectsList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searching, setSearching] = useState(true);
   const { t } = useTranslation();
 
   useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const data = await fetchProjects();
-        setProjects(data);
-      } catch (error) {
-        console.error('Error loading projects:', error);
-      } finally {
-        setLoading(false);
-        setTimeout(() => setSearching(false), 800);
-      }
-    };
-    loadProjects();
+    setProjectsList(projects);
+    setLoading(false);
+    setTimeout(() => setSearching(false), 800);
   }, []);
 
   return (
@@ -33,13 +24,13 @@ function HomePage() {
       
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex-1">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-google-text-secondary text-sm">
-              {searching ? t('home.searching') : t('home.resultsCount', { count: projects.length })}
-            </span>
-          </div>
+<div className="flex items-center gap-2 mb-4">
+          <span className="text-google-text-secondary text-sm">
+            {searching ? t('home.searching') : t('home.resultsCount', { count: projectsList.length })}
+          </span>
+        </div>
 
-          {loading || searching ? (
+        {loading || searching ? (
             <div className="space-y-4">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="animate-pulse">
@@ -50,13 +41,13 @@ function HomePage() {
                 </div>
               ))}
             </div>
-          ) : (
-            <div className="space-y-2">
-              {projects.map((project) => (
-                <SearchResult key={project._id} project={project} />
-              ))}
-            </div>
-          )}
+) : (
+          <div className="space-y-2">
+            {projectsList.map((project) => (
+              <SearchResult key={project._id} project={project} />
+            ))}
+          </div>
+        )}
         </div>
 
         <div className="w-full lg:w-80 shrink-0">
@@ -68,37 +59,28 @@ function HomePage() {
 }
 
 function ProjectsPage() {
-  const [projects, setProjects] = useState([]);
+  const [projectsList, setProjectsList] = useState([]);
   const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
 
   useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const data = await fetchProjects();
-        setProjects(data);
-      } catch (error) {
-        console.error('Error loading projects:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadProjects();
+    setProjectsList(projects);
+    setLoading(false);
   }, []);
 
   return (
     <div>
       <h2 className="text-xl text-google-text mb-4">{t('projects.title')}</h2>
       
-      {loading ? (
-        <div className="text-google-text-secondary">{t('projects.loading')}</div>
-      ) : (
-        <div className="space-y-2">
-          {projects.map((project) => (
-            <SearchResult key={project._id} project={project} />
-          ))}
-        </div>
-      )}
+{loading ? (
+          <div className="text-google-text-secondary">{t('projects.loading')}</div>
+        ) : (
+          <div className="space-y-2">
+            {projectsList.map((project) => (
+              <SearchResult key={project._id} project={project} />
+            ))}
+          </div>
+        )}
     </div>
   );
 }
