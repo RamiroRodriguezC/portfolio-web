@@ -4,6 +4,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
+const projectRoutes = require('./routes/projectRoutes');
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use(limiter);
 app.get('/api/status', (req, res) => {
   res.json({ status: 'ok' });
 });
+
+app.use('/api/projects', projectRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
