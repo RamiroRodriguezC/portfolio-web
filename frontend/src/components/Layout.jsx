@@ -8,10 +8,8 @@ export function Layout({ children, showSearchBar = true, onNavigate, currentPage
       <header className="py-4 px-6">
         <div className="max-w-5xl mx-auto flex flex-col gap-3">
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 via-red-500 to-yellow-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">G</span>
-              </div>
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 via-red-500 to-yellow-500 flex items-center justify-center shrink-0">
+              <span className="text-white font-bold text-lg">G</span>
             </div>
             {showSearchBar && <SearchBar />}
           </div>
