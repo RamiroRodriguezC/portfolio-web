@@ -8,23 +8,56 @@
   "home": {
     "title": "Ramiro Rodríguez",
     "subtitle": "Desarrollador Full Stack",
-    "searchPlaceholder": "Buscar en mis proyectos..."
+    "searchPlaceholder": "Buscar en mis proyectos...",
+    "searchQuery": "Ramiro Rodríguez",
+    "searching": "Buscando...",
+    "resultsCount": "Aproximadamente {count} resultados"
   },
   "projects": {
     "title": "Mis Proyectos",
     "viewCode": "Ver código",
     "viewLive": "Ver demo",
-    "tags": "Tecnologías"
+    "tags": "Tecnologías",
+    "loading": "Cargando proyectos..."
   },
   "experience": {
     "title": "Experiencia Laboral",
-    "education": "Educación"
+    "education": "Educación",
+    "items": {
+      "job1": {
+        "title": "Desarrollador Full Stack",
+        "company": "Freelance",
+        "period": "2023 - Presente",
+        "description": "Desarrollo de aplicaciones web full stack con React, Node.js y MongoDB."
+      },
+      "job2": {
+        "title": "Desarrollador Frontend",
+        "company": "Proyectos personales",
+        "period": "2022 - 2023",
+        "description": "Creación de interfaces responsivas con React y Tailwind CSS."
+      }
+    }
   },
   "contact": {
     "title": "Contacto",
     "email": "Email",
     "linkedin": "LinkedIn",
-    "github": "GitHub"
+    "github": "GitHub",
+    "cta": "¿Te gustaría trabajar juntos? Contáctame a través de:",
+    "emailValue": "ramiro@example.com"
+  },
+  "knowledgePanel": {
+    "title": "Ramiro Rodríguez",
+    "subtitle": "Desarrollador Full Stack",
+    "location": "Ubicación",
+    "locationValue": "Argentina",
+    "education": "Universidad",
+    "educationValue": "En formación",
+    "technologies": "Tecnologías",
+    "social": "Redes sociales"
+  },
+  "searchResult": {
+    "githubUrl": "github.com/RamiroRodriguezC"
   },
   "footer": {
     "copyright": "© 2024 Ramiro Rodríguez. Todos los derechos reservados."

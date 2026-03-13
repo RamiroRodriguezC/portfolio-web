@@ -16,10 +16,10 @@ export function Navbar({ onNavigate, currentPage }) {
         <button
           key={item.key}
           onClick={() => onNavigate?.(item.key)}
-          className={`px-4 py-2 text-sm transition-colors ${
+          className={`px-3 py-1.5 text-sm rounded-full transition-all ${
             currentPage === item.key
-              ? 'text-google-link border-b-2 border-google-link'
-              : 'text-google-text-secondary hover:text-google-text'
+              ? 'text-google-link bg-google-hover/50'
+              : 'text-google-text-secondary hover:text-google-text hover:bg-google-hover/30'
           }`}
         >
           {item.label}

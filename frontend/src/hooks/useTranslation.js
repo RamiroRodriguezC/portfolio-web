@@ -3,7 +3,7 @@ import es from '../i18n/es.json';
 const translations = es;
 
 export function useTranslation() {
-  const t = (key) => {
+  const t = (key, params = {}) => {
     const keys = key.split('.');
     let value = translations;
     
@@ -15,7 +15,9 @@ export function useTranslation() {
       }
     }
     
-    return typeof value === 'string' ? value : key;
+    if (typeof value !== 'string') return key;
+    
+    return value.replace(/\{(\w+)\}/g, (_, paramKey) => params[paramKey] ?? `{${paramKey}}`);
   };
 
   return { t };
