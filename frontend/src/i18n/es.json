@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "home": "Todo",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Ramiro Rodríguez",
+    "subtitle": "Desarrollador Full Stack",
+    "searchPlaceholder": "Buscar en mis proyectos..."
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "viewCode": "Ver código",
+    "viewLive": "Ver demo",
+    "tags": "Tecnologías"
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "education": "Educación"
+  },
+  "contact": {
+    "title": "Contacto",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© 2024 Ramiro Rodríguez. Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "notFound": "No encontrado"
+  }
+}
