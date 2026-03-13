@@ -28,38 +28,38 @@ function HomePage() {
   }, []);
 
   return (
-    <div className="flex gap-6">
-      <div className="flex-1">
-        <ProfileHeader />
-        
-        <div className="flex items-center gap-2 mb-4">
-          <span className="text-google-text-secondary text-sm">
-            {searching ? t('home.searching') : t('home.resultsCount', { count: projects.length })}
-          </span>
+    <div>
+      <ProfileHeader />
+      
+      <div className="flex flex-col lg:flex-row gap-6">
+        <div className="flex-1">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-google-text-secondary text-sm">
+              {searching ? t('home.searching') : t('home.resultsCount', { count: projects.length })}
+            </span>
+          </div>
+
+          {loading || searching ? (
+            <div className="space-y-4">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="h-4 w-48 bg-google-surface rounded mb-2"></div>
+                  <div className="h-6 w-3/4 bg-google-surface rounded mb-2"></div>
+                  <div className="h-4 w-full bg-google-surface rounded mb-1"></div>
+                  <div className="h-4 w-2/3 bg-google-surface rounded"></div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="space-y-2">
+              {projects.map((project) => (
+                <SearchResult key={project._id} project={project} />
+              ))}
+            </div>
+          )}
         </div>
 
-        {loading || searching ? (
-          <div className="space-y-4">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="animate-pulse">
-                <div className="h-4 w-48 bg-google-surface rounded mb-2"></div>
-                <div className="h-6 w-3/4 bg-google-surface rounded mb-2"></div>
-                <div className="h-4 w-full bg-google-surface rounded mb-1"></div>
-                <div className="h-4 w-2/3 bg-google-surface rounded"></div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="space-y-2">
-            {projects.map((project) => (
-              <SearchResult key={project._id} project={project} />
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div className="w-80 shrink-0 hidden lg:block">
-        <div className="sticky top-4">
+        <div className="w-full lg:w-80 shrink-0">
           <KnowledgePanel />
         </div>
       </div>
@@ -87,20 +87,18 @@ function ProjectsPage() {
   }, []);
 
   return (
-    <div className="flex gap-6">
-      <div className="flex-1">
-        <h2 className="text-xl text-google-text mb-4">{t('projects.title')}</h2>
-        
-        {loading ? (
-          <div className="text-google-text-secondary">{t('projects.loading')}</div>
-        ) : (
-          <div className="space-y-2">
-            {projects.map((project) => (
-              <SearchResult key={project._id} project={project} />
-            ))}
-          </div>
-        )}
-      </div>
+    <div>
+      <h2 className="text-xl text-google-text mb-4">{t('projects.title')}</h2>
+      
+      {loading ? (
+        <div className="text-google-text-secondary">{t('projects.loading')}</div>
+      ) : (
+        <div className="space-y-2">
+          {projects.map((project) => (
+            <SearchResult key={project._id} project={project} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
