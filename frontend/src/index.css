@@ -1,10 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-google-bg: #202124;
+  --color-google-surface: #303134;
+  --color-google-text: #e8eaed;
+  --color-google-text-secondary: #bdc1c6;
+  --color-google-link: #8ab4f8;
+  --color-google-hover: #3c4043;
+}
 
 body {
   margin: 0;
-  background-color: #202124;
-  color: #e8eaed;
+  background-color: var(--color-google-bg);
+  color: var(--color-google-text);
   font-family: system-ui, -apple-system, sans-serif;
 }
