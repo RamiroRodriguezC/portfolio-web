@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "cd frontend && npm run dev",
+    "install:frontend": "cd frontend && npm install",
     "build": "cd frontend && npm run build",
-    "start": "cd frontend && npm run preview"
-  },
-  "dependencies": {
-    "dotenv": "^17.3.1",
-    "mongoose": "^9.3.0"
+    "dev": "cd frontend && npm run dev"
   }
 }
