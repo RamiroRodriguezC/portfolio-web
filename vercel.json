@@ -2,5 +2,10 @@
   "buildCommand": "cd frontend && npm run build",
   "installCommand": "npm install",
   "framework": "vite",
-  "outputDirectory": "frontend/dist"
+  "outputDirectory": "frontend/dist",
+  "functions": {
+    "frontend/api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }
