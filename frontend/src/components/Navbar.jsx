@@ -4,15 +4,15 @@ export function Navbar({ onNavigate, currentPage }) {
   const { t } = useTranslation();
 
   const navItems = [
-    { key: 'home', label: t('nav.home') },
+    { key: 'home', label: t('nav.all') },
     { key: 'projects', label: t('nav.projects') },
     { key: 'experience', label: t('nav.experience') },
     { key: 'contact', label: t('nav.contact') },
   ];
 
   return (
-    <nav className="flex items-center gap-1">
-      {navItems.map((item) => (
+    <nav className="flex items-center gap-1 border-b border-google-surface pb-1">
+      {navItems.map((item, index) => (
         <button
           key={item.key}
           onClick={() => onNavigate?.(item.key)}
