@@ -1,5 +1,4 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const projectSchema = new mongoose.Schema({
   title: { type: String, required: true, trim: true },
