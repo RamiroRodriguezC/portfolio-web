@@ -1,33 +1,29 @@
-import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 
-export function Navbar() {
+export function Navbar({ onNavigate, currentPage }) {
   const { t } = useTranslation();
-  const location = useLocation();
 
   const navItems = [
-    { path: '/', label: t('nav.home'), key: 'home' },
-    { path: '/projects', label: t('nav.projects'), key: 'projects' },
-    { path: '/experience', label: t('nav.experience'), key: 'experience' },
-    { path: '/contact', label: t('nav.contact'), key: 'contact' },
+    { key: 'home', label: t('nav.home') },
+    { key: 'projects', label: t('nav.projects') },
+    { key: 'experience', label: t('nav.experience') },
+    { key: 'contact', label: t('nav.contact') },
   ];
 
-  const isActive = (path) => location.pathname === path;
-
   return (
-    <nav className="flex gap-1 p-1 bg-google-surface rounded-full">
+    <nav className="flex items-center gap-1">
       {navItems.map((item) => (
-        <Link
+        <button
           key={item.key}
-          to={item.path}
-          className={`px-4 py-1.5 rounded-full text-sm transition-colors ${
-            isActive(item.path)
-              ? 'bg-google-hover text-google-text'
-              : 'text-google-text-secondary hover:text-google-text hover:bg-google-hover/50'
+          onClick={() => onNavigate?.(item.key)}
+          className={`px-4 py-2 text-sm transition-colors ${
+            currentPage === item.key
+              ? 'text-google-link border-b-2 border-google-link'
+              : 'text-google-text-secondary hover:text-google-text'
           }`}
         >
           {item.label}
-        </Link>
+        </button>
       ))}
     </nav>
   );
