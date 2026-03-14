@@ -9,7 +9,7 @@
     "title": "Ramiro Rodríguez",
     "subtitle": "Desarrollador Full Stack",
     "searchPlaceholder": "Buscar...",
-    "searchQuery": "Ramiro Rodríguez",
+    "searchQuery": "Ramiro Rodríguez Castro",
     "searching": "Buscando...",
     "resultsCount": "Aproximadamente {count} resultados"
   },
@@ -46,6 +46,11 @@
     "cta": "¿Te gustaría trabajar juntos? Contáctame a través de:",
     "emailValue": "ramiro@example.com"
   },
+  "profileHeader": {
+    "news": "Novedades",
+    "cvDescription": "Descargá mi currículum actualizado para conocer más sobre mi experiencia y habilidades.",
+    "downloadCv": "Descargar CV"
+  },
   "knowledgePanel": {
     "name": "Ramiro Rodríguez",
     "occupation": "Desarrollador Full Stack",
@@ -66,7 +71,7 @@
     "githubUrl": "github.com/RamiroRodriguezC"
   },
   "footer": {
-    "copyright": "© 2024 Ramiro Rodríguez. Todos los derechos reservados."
+    "copyright": "© 2026 Ramiro Rodríguez. Todos los derechos reservados."
   },
   "common": {
     "loading": "Cargando...",
